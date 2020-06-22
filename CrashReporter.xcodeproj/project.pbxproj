@@ -1188,6 +1188,7 @@
 		809FFE941C4D5F4900AE6234 /* PLCrashAsyncMachExceptionInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BEC43017BD4F540082CBFB /* PLCrashAsyncMachExceptionInfoTests.m */; };
 		80A63BD71C4D32F30073B7A3 /* libCrashReporter-appletvsimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8064D88A1C4D22DA005A8B4C /* libCrashReporter-appletvsimulator.a */; };
 		80A63BD81C4D32FB0073B7A3 /* libCrashReporter-appletvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8064D81B1C4D22D8005A8B4C /* libCrashReporter-appletvos.a */; };
+		8AEB2F4324A14F1E005444C6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB2F4524A14F1E005444C6 /* Localizable.strings */; };
 		C21688F916445344000F90ED /* PLCrashAsyncMachOStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C21688F816445344000F90ED /* PLCrashAsyncMachOStringTests.m */; };
 		C21688FA16445344000F90ED /* PLCrashAsyncMachOStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C21688F816445344000F90ED /* PLCrashAsyncMachOStringTests.m */; };
 		C21688FB16445344000F90ED /* PLCrashAsyncMachOStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C21688F816445344000F90ED /* PLCrashAsyncMachOStringTests.m */; };
@@ -1864,6 +1865,11 @@
 		8064D9B01C4D27EB005A8B4C /* DemoCrash-tvOS-Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DemoCrash-tvOS-Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		809FFE8C1C4D536600AE6234 /* DemoCrash-tvOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoCrash-tvOS-Info.plist"; sourceTree = "<group>"; };
 		80A63BD61C4D32410073B7A3 /* Tests-AppleTV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-AppleTV-Info.plist"; sourceTree = "<group>"; };
+		8AE8663224A15F6700257ACA /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8AEB2F4424A14F1E005444C6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8AEB2F4624A14F3B005444C6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8AEB2F4724A14F5D005444C6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8AEB2F4824A14F64005444C6 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* CrashReporter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CrashReporter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21688F816445344000F90ED /* PLCrashAsyncMachOStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCrashAsyncMachOStringTests.m; sourceTree = "<group>"; };
@@ -2628,6 +2634,7 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8AEB2F4524A14F1E005444C6 /* Localizable.strings */,
 				057CD98516CD5D5C0067E670 /* Default-568h@2x.png */,
 				05F40CE90EF7AB80008050CF /* DemoCrash-Info.plist */,
 				809FFE8C1C4D536600AE6234 /* DemoCrash-tvOS-Info.plist */,
@@ -3506,13 +3513,15 @@
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "CrashReporter" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
+				es,
+				ja,
+				fr,
+				de,
+				pt,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* CrashReporter */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -3645,6 +3654,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEB2F4324A14F1E005444C6 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4925,6 +4935,21 @@
 			targetProxy = C25664E4235737560088513E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8AEB2F4524A14F1E005444C6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AEB2F4424A14F1E005444C6 /* ja */,
+				8AEB2F4624A14F3B005444C6 /* es */,
+				8AEB2F4724A14F5D005444C6 /* fr */,
+				8AEB2F4824A14F64005444C6 /* de */,
+				8AE8663224A15F6700257ACA /* pt */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0502E45B12BD0D0000ACDCB5 /* Debug */ = {

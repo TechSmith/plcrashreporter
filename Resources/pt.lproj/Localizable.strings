@@ -1,0 +1,81 @@
+/* Crash log decoding error message */
+"An unknown error occured decoding the crash report" = "Se ha producido un error desconocido mientras se descodificaba el informe del bloqueo";
+
+/* Crash log decoding error message */
+"Could not decode invalid crash log header" = "No se ha podido descodificar el encabezado del registro del bloqueo no válido";
+
+/* Crash log decoding error message */
+"Could not decode truncated crash log" = "No se ha podido descodificar el registro del bloqueo truncado";
+
+/* Crash log decoding message */
+"Could not decode unsupported crash report version: %d" = "No se ha podido descodificar la versión del informe del bloqueo no compatible: %d";
+
+/* Unknown architecture in crash report */
+"Crash report has an unknown architecture" = "El informe del bloqueo presenta una arquitectura desconocida";
+
+/* Invalid mach exception info in crash report */
+"Crash report includes too many Mach Exception codes" = "El informe del bloqueo incluye demasiados códigos de Excepción de Mach";
+
+/* Missing app identifier in crash report */
+"Crash report is missing Application Information app identifier field" = "El informe del bloqueo carece del campo de identificación de la aplicación Información de la aplicación";
+
+/* Missing app version in crash report */
+"Crash report is missing Application Information app version field" = "El informe del bloqueo carece del campo de versión de la aplicación Información de la aplicación";
+
+/* Missing app info in crash report */
+"Crash report is missing Application Information section" = "El informe del bloqueo carece de la sección Información de la aplicación";
+
+/* Missing appinfo in crash report */
+"Crash report is missing Exception Information section" = "El informe del bloqueo carece de la sección Información de excepción";
+
+/* Missing mach exception info in crash report */
+"Crash report is missing Mach Exception Information section" = "El informe del bloqueo carece de la sección Información de Excepción de Mach";
+
+/* Missing machine_info in crash report */
+"Crash report is missing Machine Information section" = "El informe del bloqueo carece de la sección Información del equipo";
+
+/* Missing process info in crash report */
+"Crash report is missing Process Information section" = "El informe del bloqueo carece de la sección Información del proceso";
+
+/* Missing appinfo in crash report */
+"Crash report is missing Signal Information section" = "El informe del bloqueo carece de la sección Información de la señal";
+
+/* Missing sysinfo operating system in crash report */
+"Crash report is missing System Information OS version field" = "El informe del bloqueo carece del campo de versión del SO de Información del sistema";
+
+/* Missing sysinfo in crash report */
+"Crash report is missing System Information section" = "El informe del bloqueo carece de la sección Información del sistema";
+
+/* Missing image info in crash report */
+"Crash report is missing binary image information" = "El informe del bloqueo carece de información de la imagen binaria";
+
+/* Missing appinfo operating system in crash report */
+"Crash report is missing exception name field" = "El informe del bloqueo carece del campo de nombre de la excepción";
+
+/* Missing appinfo operating system in crash report */
+"Crash report is missing exception reason field" = "El informe del bloqueo carece del campo de motivo de la excepción";
+
+/* Missing processor info in crash report */
+"Crash report is missing processor info section" = "El informe del bloqueo carece de la sección de información del procesador";
+
+/* Missing appinfo operating system in crash report */
+"Crash report is missing signal code field" = "El informe del bloqueo carece del campo de código de la señal";
+
+/* Missing appinfo operating system in crash report */
+"Crash report is missing signal name field" = "El informe del bloqueo carece del campo de nombre de la señal";
+
+/* Missing stack frame info in crash report */
+"Crash report is missing stack frame information" = "El informe del bloqueo carece de información del marco de pila";
+
+/* Missing symbol info in crash report */
+"Crash report is missing symbol information" = "El informe del bloqueo carece de información del símbolo";
+
+/* Missing thread info in crash report */
+"Crash report is missing thread state information" = "El informe del bloqueo carece de información del estado de subproceso";
+
+/* Error opening temporary output path */
+"Failed to create temporary path" = "Error al crear la ruta temporal";
+
+/* No comment provided by engineer. */
+"Unable to open live crash report for reading" = "No es posible abrir el informe del bloqueo en vivo para leerlo";
+
