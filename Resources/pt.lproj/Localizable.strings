@@ -1,81 +1,81 @@
 /* Crash log decoding error message */
-"An unknown error occured decoding the crash report" = "Se ha producido un error desconocido mientras se descodificaba el informe del bloqueo";
+"An unknown error occured decoding the crash report" = "Ocorreu um erro desconhecido na decodificação do relatório de falha";
 
 /* Crash log decoding error message */
-"Could not decode invalid crash log header" = "No se ha podido descodificar el encabezado del registro del bloqueo no válido";
+"Could not decode invalid crash log header" = "Não foi possível decodificar o cabeçalho do registro de falha inválido";
 
 /* Crash log decoding error message */
-"Could not decode truncated crash log" = "No se ha podido descodificar el registro del bloqueo truncado";
+"Could not decode truncated crash log" = "Não foi possível decodificar o registro de falha truncado";
 
 /* Crash log decoding message */
-"Could not decode unsupported crash report version: %d" = "No se ha podido descodificar la versión del informe del bloqueo no compatible: %d";
+"Could not decode unsupported crash report version: %d" = "Não foi possível decodificar a versão incompatível do relatório de falha: %d";
 
 /* Unknown architecture in crash report */
-"Crash report has an unknown architecture" = "El informe del bloqueo presenta una arquitectura desconocida";
+"Crash report has an unknown architecture" = "A arquitetura do relatório de falha é desconhecida";
 
 /* Invalid mach exception info in crash report */
-"Crash report includes too many Mach Exception codes" = "El informe del bloqueo incluye demasiados códigos de Excepción de Mach";
+"Crash report includes too many Mach Exception codes" = "O relatório de falha inclui muitos códigos de exceção Mach";
 
 /* Missing app identifier in crash report */
-"Crash report is missing Application Information app identifier field" = "El informe del bloqueo carece del campo de identificación de la aplicación Información de la aplicación";
+"Crash report is missing Application Information app identifier field" = "Falta o campo de identificador do aplicativo na seção Informações do aplicativo do relatório de falha";
 
 /* Missing app version in crash report */
-"Crash report is missing Application Information app version field" = "El informe del bloqueo carece del campo de versión de la aplicación Información de la aplicación";
+"Crash report is missing Application Information app version field" = "Falta o campo de versão do aplicativo na seção Informações do aplicativo do relatório de falha";
 
 /* Missing app info in crash report */
-"Crash report is missing Application Information section" = "El informe del bloqueo carece de la sección Información de la aplicación";
+"Crash report is missing Application Information section" = "Falta a seção Informações do aplicativo no relatório de falha";
 
 /* Missing appinfo in crash report */
-"Crash report is missing Exception Information section" = "El informe del bloqueo carece de la sección Información de excepción";
+"Crash report is missing Exception Information section" = "Falta a seção Informações da exceção no relatório de falha";
 
 /* Missing mach exception info in crash report */
-"Crash report is missing Mach Exception Information section" = "El informe del bloqueo carece de la sección Información de Excepción de Mach";
+"Crash report is missing Mach Exception Information section" = "Falta a seção Informações da exceção Mach no relatório de falha";
 
 /* Missing machine_info in crash report */
-"Crash report is missing Machine Information section" = "El informe del bloqueo carece de la sección Información del equipo";
+"Crash report is missing Machine Information section" = "Falta a seção Informações da máquina no relatório de falha";
 
 /* Missing process info in crash report */
-"Crash report is missing Process Information section" = "El informe del bloqueo carece de la sección Información del proceso";
+"Crash report is missing Process Information section" = "Falta a seção Informações do processo no relatório de falha";
 
 /* Missing appinfo in crash report */
-"Crash report is missing Signal Information section" = "El informe del bloqueo carece de la sección Información de la señal";
+"Crash report is missing Signal Information section" = "Falta a seção Informações do sinal no relatório de falha";
 
 /* Missing sysinfo operating system in crash report */
-"Crash report is missing System Information OS version field" = "El informe del bloqueo carece del campo de versión del SO de Información del sistema";
+"Crash report is missing System Information OS version field" = "Falta o campo de versão do SO na seção Informações do sistema do relatório de falha";
 
 /* Missing sysinfo in crash report */
-"Crash report is missing System Information section" = "El informe del bloqueo carece de la sección Información del sistema";
+"Crash report is missing System Information section" = "Falta a seção Informações do sistema no relatório de falha";
 
 /* Missing image info in crash report */
-"Crash report is missing binary image information" = "El informe del bloqueo carece de información de la imagen binaria";
+"Crash report is missing binary image information" = "Faltam informações da imagem binária no relatório de falha";
 
 /* Missing appinfo operating system in crash report */
-"Crash report is missing exception name field" = "El informe del bloqueo carece del campo de nombre de la excepción";
+"Crash report is missing exception name field" = "Falta o campo de nome da exceção no relatório de falha";
 
 /* Missing appinfo operating system in crash report */
-"Crash report is missing exception reason field" = "El informe del bloqueo carece del campo de motivo de la excepción";
+"Crash report is missing exception reason field" = "Falta o campo de razão da exceção no relatório de falha";
 
 /* Missing processor info in crash report */
-"Crash report is missing processor info section" = "El informe del bloqueo carece de la sección de información del procesador";
+"Crash report is missing processor info section" = "Falta a seção de informações do processador no relatório de falha";
 
 /* Missing appinfo operating system in crash report */
-"Crash report is missing signal code field" = "El informe del bloqueo carece del campo de código de la señal";
+"Crash report is missing signal code field" = "Falta o campo de código do sinal no relatório de falha";
 
 /* Missing appinfo operating system in crash report */
-"Crash report is missing signal name field" = "El informe del bloqueo carece del campo de nombre de la señal";
+"Crash report is missing signal name field" = "Falta o campo de nome do sinal no relatório de falha";
 
 /* Missing stack frame info in crash report */
-"Crash report is missing stack frame information" = "El informe del bloqueo carece de información del marco de pila";
+"Crash report is missing stack frame information" = "Faltam as informações do registro de ativação no relatório de falha";
 
 /* Missing symbol info in crash report */
-"Crash report is missing symbol information" = "El informe del bloqueo carece de información del símbolo";
+"Crash report is missing symbol information" = "Faltam as informações de símbolos no relatório de falha";
 
 /* Missing thread info in crash report */
-"Crash report is missing thread state information" = "El informe del bloqueo carece de información del estado de subproceso";
+"Crash report is missing thread state information" = "Faltam as informações de estado do encadeamento de execução (thread) no relatório de falha";
 
 /* Error opening temporary output path */
-"Failed to create temporary path" = "Error al crear la ruta temporal";
+"Failed to create temporary path" = "O caminho temporário não foi criado";
 
 /* No comment provided by engineer. */
-"Unable to open live crash report for reading" = "No es posible abrir el informe del bloqueo en vivo para leerlo";
+"Unable to open live crash report for reading" = "Não é possível abrir o relatório de falha em tempo real para leitura";
 
