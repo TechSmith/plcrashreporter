@@ -1,81 +1,81 @@
 /* Crash log decoding error message */
-"An unknown error occured decoding the crash report" = "クラッシュ レポートのデコード中に不明なエラーが発生しました";
+"An unknown error occured decoding the crash report" = "Une erreur inconnue s’est produite lors du décodage du rapport de plantage.";
 
 /* Crash log decoding error message */
-"Could not decode invalid crash log header" = "無効なクラッシュ ログ ヘッダーをデコードできませんでした";
+"Could not decode invalid crash log header" = "L’en-tête du fichier log de plantage n’est pas valide ; impossible de le décoder.";
 
 /* Crash log decoding error message */
-"Could not decode truncated crash log" = "切り捨てられたクラッシュ ログをデコードできませんでした";
+"Could not decode truncated crash log" = "Le fichier log de plantage est tronqué ; impossible de le décoder.";
 
 /* Crash log decoding message */
-"Could not decode unsupported crash report version: %d" = "サポートされていないバージョンのクラッシュ レポートをデコードできませんでした: %d";
+"Could not decode unsupported crash report version: %d" = "Impossible de décoder la version de rapport de plantage non prise en charge : %d";
 
 /* Unknown architecture in crash report */
-"Crash report has an unknown architecture" = "クラッシュ レポートに不明なアーキテクチャがあります";
+"Crash report has an unknown architecture" = "Le rapport de plantage présente une architecture inconnue.";
 
 /* Invalid mach exception info in crash report */
-"Crash report includes too many Mach Exception codes" = "クラッシュ レポートに含まれる Mach Exception コードが多すぎます";
+"Crash report includes too many Mach Exception codes" = "Le rapport de plantage comprend trop de codes d’exception Mach.";
 
 /* Missing app identifier in crash report */
-"Crash report is missing Application Information app identifier field" = "クラッシュ レポートにアプリケーション情報のアプリ識別子フィールドがありません";
+"Crash report is missing Application Information app identifier field" = "Le rapport de plantage ne contient pas de champ d’identification d’application dans les informations sur l’application.";
 
 /* Missing app version in crash report */
-"Crash report is missing Application Information app version field" = "クラッシュ レポートにアプリケーション情報のアプリ バージョン フィールドがありません";
+"Crash report is missing Application Information app version field" = "Le rapport de plantage ne contient pas de champ de version d’application dans les informations sur l’application.";
 
 /* Missing app info in crash report */
-"Crash report is missing Application Information section" = "クラッシュ レポートにアプリケーション情報セクションがありません";
+"Crash report is missing Application Information section" = "Le rapport de plantage ne contient pas de section Informations sur l’application.";
 
 /* Missing appinfo in crash report */
-"Crash report is missing Exception Information section" = "クラッシュ レポートに例外情報セクションがありません";
+"Crash report is missing Exception Information section" = "Le rapport de plantage ne contient pas de section Informations sur l’exception.";
 
 /* Missing mach exception info in crash report */
-"Crash report is missing Mach Exception Information section" = "クラッシュ レポートに Mach Exception 情報セクションがありません";
+"Crash report is missing Mach Exception Information section" = "Le rapport de plantage ne contient pas de section Informations sur l’exception Mach.";
 
 /* Missing machine_info in crash report */
-"Crash report is missing Machine Information section" = "クラッシュ レポートにマシン情報セクションがありません";
+"Crash report is missing Machine Information section" = "Le rapport de plantage ne contient pas de section Informations sur la machine.";
 
 /* Missing process info in crash report */
-"Crash report is missing Process Information section" = "クラッシュ レポートにプロセス情報セクションがありません";
+"Crash report is missing Process Information section" = "Le rapport de plantage ne contient pas de section Informations sur le processus.";
 
 /* Missing appinfo in crash report */
-"Crash report is missing Signal Information section" = "クラッシュ レポートにシグナル情報セクションがありません";
+"Crash report is missing Signal Information section" = "Le rapport de plantage ne contient pas de section Informations sur le signal.";
 
 /* Missing sysinfo operating system in crash report */
-"Crash report is missing System Information OS version field" = "クラッシュ レポートにシステム情報の OS バージョン フィールドがありません";
+"Crash report is missing System Information OS version field" = "Le rapport de plantage ne contient pas de champ de version d’OS dans les informations sur le système.";
 
 /* Missing sysinfo in crash report */
-"Crash report is missing System Information section" = "クラッシュ レポートにシステム情報セクションがありません";
+"Crash report is missing System Information section" = "Le rapport de plantage ne contient pas de section Informations sur le système.";
 
 /* Missing image info in crash report */
-"Crash report is missing binary image information" = "クラッシュ レポートにバイナリ イメージ情報がありません";
+"Crash report is missing binary image information" = "Le rapport de plantage ne contient pas d’informations sur l’image binaire.";
 
 /* Missing appinfo operating system in crash report */
-"Crash report is missing exception name field" = "クラッシュ レポートに例外名フィールドがありません";
+"Crash report is missing exception name field" = "Le rapport de plantage ne contient pas de champ de nom d’exception.";
 
 /* Missing appinfo operating system in crash report */
-"Crash report is missing exception reason field" = "クラッシュ レポートに例外の理由フィールドがありません";
+"Crash report is missing exception reason field" = "Le rapport de plantage ne contient pas de champ de motif d’exception.";
 
 /* Missing processor info in crash report */
-"Crash report is missing processor info section" = "クラッシュ レポートにプロセッサ情報セクションがありません";
+"Crash report is missing processor info section" = "Le rapport de plantage ne contient pas de section Informations sur le processeur.";
 
 /* Missing appinfo operating system in crash report */
-"Crash report is missing signal code field" = "クラッシュ レポートにシグナル コード フィールドがありません";
+"Crash report is missing signal code field" = "Le rapport de plantage ne contient pas de champ de code de signal.";
 
 /* Missing appinfo operating system in crash report */
-"Crash report is missing signal name field" = "クラッシュ レポートにシグナル名フィールドがありません";
+"Crash report is missing signal name field" = "Le rapport de plantage ne contient pas de champ de nom de signal.";
 
 /* Missing stack frame info in crash report */
-"Crash report is missing stack frame information" = "クラッシュ レポートにスタック フレーム情報がありません";
+"Crash report is missing stack frame information" = "Le rapport de plantage ne contient pas d’informations sur la structure de pile.";
 
 /* Missing symbol info in crash report */
-"Crash report is missing symbol information" = "クラッシュ レポートにシンボル情報がありません";
+"Crash report is missing symbol information" = "Le rapport de plantage ne contient pas d’informations sur les symboles.";
 
 /* Missing thread info in crash report */
-"Crash report is missing thread state information" = "クラッシュ レポートにスレッド状態情報がありません";
+"Crash report is missing thread state information" = "Le rapport de plantage ne contient pas d’informations sur l’état du thread.";
 
 /* Error opening temporary output path */
-"Failed to create temporary path" = "一時パスを作成できませんでした";
+"Failed to create temporary path" = "Impossible de créer un chemin temporaire.";
 
 /* No comment provided by engineer. */
-"Unable to open live crash report for reading" = "ライブのクラッシュ レポートを開いて読み取れません";
+"Unable to open live crash report for reading" = "Impossible d’ouvrir le rapport de plantage live en lecture.";
 
