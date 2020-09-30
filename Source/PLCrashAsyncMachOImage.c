@@ -90,8 +90,8 @@ plcrash_error_t plcrash_nasync_macho_init (plcrash_async_macho_t *image, mach_po
         case MH_CIGAM:
             // Enable byte swapping
             image->byteorder = &plcrash_async_byteorder_swapped;
-            // Fall-through
-            __attribute__((fallthrough));
+            image->m64 = false;
+            break;
 
         case MH_MAGIC:
             image->m64 = false;
@@ -100,8 +100,8 @@ plcrash_error_t plcrash_nasync_macho_init (plcrash_async_macho_t *image, mach_po
         case MH_CIGAM_64:
             // Enable byte swapping
             image->byteorder = &plcrash_async_byteorder_swapped;
-            // Fall-through
-            __attribute__((fallthrough));
+            image->m64 = true;
+            break;
             
         case MH_MAGIC_64:
             image->m64 = true;
