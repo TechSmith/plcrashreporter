@@ -5529,6 +5529,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../PLCrashReporter/Source/PLCrashNamespace.h";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -5556,6 +5557,7 @@
 				EFFECTIVE_PLATFORM_NAME = "-MacOSX";
 				EXPORTED_SYMBOLS_FILE = Resources/CrashReporter.exp;
 				GCC_MODEL_TUNING = G5;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../PLCrashReporter/Source/PLCrashNamespace.h";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = (
 					"$(inherited)",
