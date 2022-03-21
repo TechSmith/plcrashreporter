@@ -1918,7 +1918,7 @@ repeated_field_pack_to_buffer(const ProtobufCFieldDescriptor *field,
         uint8_t scratch[MAX_UINT64_ENCODED_SIZE * 2];
         size_t rv = tag_pack(field->id, scratch);
         size_t payload_len = get_packed_payload_length(field, count, array);
-        size_t tmp;
+        size_t tmp __unused;
 
         scratch[0] |= PROTOBUF_C_WIRE_TYPE_LENGTH_PREFIXED;
         rv += uint32_pack(payload_len, scratch + rv);
