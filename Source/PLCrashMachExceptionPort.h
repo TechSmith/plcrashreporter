@@ -57,7 +57,7 @@
 + (PLCrashMachExceptionPortSet *) exceptionPortsForTask: (task_t) task mask: (exception_mask_t) mask error: (NSError **) outError;
 + (PLCrashMachExceptionPortSet *) exceptionPortsForThread: (thread_t) thread mask: (exception_mask_t) mask error: (NSError **) outError;
 
-- (BOOL) registerForTask: (task_t) task previousPortSet: (PLCrashMachExceptionPortSet **) ports error: (NSError **) outError;
+- (BOOL) registerForTask: (task_t) task previousPortSet: (PLCrashMachExceptionPortSet * __strong *) ports error: (NSError **) outError;
 - (BOOL) registerForThread: (thread_t) thread previousPortSet: (PLCrashMachExceptionPortSet **) ports error: (NSError **) outError;
 
 /** Exception server port. */

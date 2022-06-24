@@ -59,7 +59,7 @@
  * will be fetched once, and the returned instance is immutable.
  */
 + (instancetype) currentProcessInfo {
-    return [[[self alloc] initWithProcessID: getpid()] autorelease];
+    return [[self alloc] initWithProcessID: getpid()];
 }
 
 /**
@@ -88,7 +88,6 @@
         if (errno == ENOENT)
             PLCF_DEBUG("Unexpected sysctl error %d: %s", errno, strerror(errno));
         
-        [self release];
         return nil;
     }
     
@@ -124,11 +123,6 @@
     _startTime = process_info.kp_proc.p_starttime;
 
     return self;
-}
-
-- (void) dealloc {
-    [_processName release];
-    [super dealloc];
 }
 
 @end

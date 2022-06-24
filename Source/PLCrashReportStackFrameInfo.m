@@ -47,15 +47,9 @@
         return nil;
     
     _instructionPointer = instructionPointer;
-    _symbolInfo = [symbolInfo retain];
+    _symbolInfo = symbolInfo;
     
     return self;
-}
-
-- (void) dealloc {
-    [_symbolInfo release];
-
-    [super dealloc];
 }
 
 @end

@@ -284,7 +284,6 @@ struct plcrash_exception_server_context {
         free(_serverContext);
         _serverContext = NULL;
         
-        [self release];
         return nil;
     }
     
@@ -295,7 +294,6 @@ struct plcrash_exception_server_context {
         free(_serverContext);
         _serverContext = NULL;
         
-        [self release];
         return nil;
     }
     
@@ -306,7 +304,6 @@ struct plcrash_exception_server_context {
     if (kr != KERN_SUCCESS) {
         plcrash_populate_mach_error(outError, kr, @"Failed to allocate exception server's port");
         
-        [self release];
         return nil;
     }
     
@@ -317,7 +314,6 @@ struct plcrash_exception_server_context {
     if (kr != KERN_SUCCESS) {
         plcrash_populate_mach_error(outError, kr, @"Failed to allocate exception server's port");
         
-        [self release];
         return nil;
     }
 
@@ -325,7 +321,6 @@ struct plcrash_exception_server_context {
     if (kr != KERN_SUCCESS) {
         plcrash_populate_mach_error(outError, kr, @"Failed to add send right to exception server's port");
         
-        [self release];
         return nil;
     }
     
@@ -334,7 +329,6 @@ struct plcrash_exception_server_context {
     if (kr != KERN_SUCCESS) {
         plcrash_populate_mach_error(outError, kr, @"Failed to request MACH_NOTIFY_NO_SENDERS on the exception server's port");
 
-        [self release];
         return nil;
     }
     
@@ -345,7 +339,6 @@ struct plcrash_exception_server_context {
     if (kr != KERN_SUCCESS) {
         plcrash_populate_mach_error(outError, kr, @"Failed to allocate exception server's port set");
         
-        [self release];
         return nil;
     }
 
@@ -354,7 +347,6 @@ struct plcrash_exception_server_context {
     if (kr != KERN_SUCCESS) {
         plcrash_populate_mach_error(outError, kr, @"Failed to add exception server port to port set");
         
-        [self release];
         return nil;
     }
 
@@ -363,7 +355,6 @@ struct plcrash_exception_server_context {
     if (kr != KERN_SUCCESS) {
         plcrash_populate_mach_error(outError, kr, @"Failed to add exception server notify port to port set");
         
-        [self release];
         return nil;
     }
 
@@ -372,7 +363,6 @@ struct plcrash_exception_server_context {
         if (pthread_attr_init(&attr) != 0) {
             plcrash_populate_posix_error(outError, errno, @"Failed to initialize pthread_attr");
             
-            [self release];
             return nil;
         }
         
@@ -385,7 +375,6 @@ struct plcrash_exception_server_context {
             plcrash_populate_posix_error(outError, errno, @"Failed to create exception server thread");
             pthread_attr_destroy(&attr);
             
-            [self release];
             return nil;
         }
         
@@ -471,10 +460,10 @@ struct plcrash_exception_server_context {
 
     /* Create the port oject */
     PLCrashMachExceptionPort *result;
-    result = [[[PLCrashMachExceptionPort alloc] initWithServerPort: port
+    result = [[PLCrashMachExceptionPort alloc] initWithServerPort: port
                                                               mask: mask
                                                           behavior: PLCRASH_DEFAULT_BEHAVIOR
-                                                            flavor: MACHINE_THREAD_STATE] autorelease];
+                                                            flavor: MACHINE_THREAD_STATE];
 
     /* Drop our send right */
     mach_port_deallocate(mach_task_self(), port);
@@ -813,7 +802,6 @@ static void *exception_server_thread (void *arg) {
     mach_msg_return_t mr;
     
     if (_serverContext == NULL) {
-        [super dealloc];
         return;
     }
 
@@ -858,8 +846,6 @@ static void *exception_server_thread (void *arg) {
 
     /* Once we've been signaled by the background thread, it will no longer access exc_context */
     free(_serverContext);
-    
-    [super dealloc];
 }
 
 @end
