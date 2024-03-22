@@ -45,6 +45,7 @@
 #import "PLCrashAsyncMachExceptionInfo.h"
 
 #import "PLCrashReporterNSError.h"
+#import "CPPCrashHelper.h"
 
 #import <fcntl.h>
 #import <dlfcn.h>
@@ -217,6 +218,13 @@ static bool signal_handler_callback (int signal, siginfo_t *info, pl_ucontext_t 
         sigemptyset(&sa.sa_mask);
         
         sigaction(monitored_signals[i], &sa, NULL);
+    }
+    
+    NSString* exceptionInfo = [CPPCrashHelper retrieveExceptionInfo];
+    
+    if ( exceptionInfo != nil )
+    {
+        NSLog(@"CPPCrashReporter - got info %@", exceptionInfo);
     }
 
     /* Extract the thread state */
