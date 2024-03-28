@@ -18,9 +18,9 @@
 
 @implementation CPPCrashHelper
 
-+(NSString*)retrieveExceptionInfo
++(NSDictionary*)retrieveExceptionInfo
 {
-    NSString* exceptionInfo = nil;
+    NSMutableDictionary* exceptionInfo = nil;
     
     const char* name = NULL;
     std::type_info* tinfo = __cxxabiv1::__cxa_current_exception_type();
@@ -32,8 +32,9 @@
     // Ignore NSExceptions
     if ( name != NULL && strcmp(name, "NSException") != 0 )
     {
+        exceptionInfo = [NSMutableDictionary dictionary];
         NSString* nameString = [NSString stringWithFormat:@"name : %@", [NSString stringWithUTF8String:name]];
-        exceptionInfo = nameString;
+        exceptionInfo[@"name"] = nameString;
         
         char descriptionBuff[DESCRIPTION_BUFFER_LENGTH];
         const char* description = descriptionBuff;
@@ -48,7 +49,7 @@
             strncpy(descriptionBuff, exc.what(), sizeof(descriptionBuff));
         }
         NSString* descriptionString = [NSString stringWithFormat:@" description : %@", [NSString stringWithUTF8String:description]];
-        exceptionInfo = [exceptionInfo stringByAppendingString:descriptionString];
+        exceptionInfo[@"reason"] = descriptionString;
     }
     
     return exceptionInfo;

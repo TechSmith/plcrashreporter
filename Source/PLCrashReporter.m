@@ -220,11 +220,15 @@ static bool signal_handler_callback (int signal, siginfo_t *info, pl_ucontext_t 
         sigaction(monitored_signals[i], &sa, NULL);
     }
     
-    NSString* exceptionInfo = [CPPCrashHelper retrieveExceptionInfo];
+    NSDictionary* exceptionInfo = [CPPCrashHelper retrieveExceptionInfo];
     
     if ( exceptionInfo != nil )
     {
-        NSLog(@"CPPCrashReporter - got info %@", exceptionInfo);
+        // NSLog(@"CPPCrashReporter - got info %@", exceptionInfo);
+        NSException* exception = [NSException exceptionWithName:exceptionInfo[@"name"]
+                                                         reason:exceptionInfo[@"reason"] 
+                                                       userInfo:nil];
+        plcrash_log_writer_set_exception(&signal_handler_context.writer, exception);
     }
 
     /* Extract the thread state */
