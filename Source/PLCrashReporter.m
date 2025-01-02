@@ -224,7 +224,6 @@ static bool signal_handler_callback (int signal, siginfo_t *info, pl_ucontext_t 
     
     if ( exceptionInfo != nil )
     {
-        // NSLog(@"CPPCrashReporter - got info %@", exceptionInfo);
         NSException* exception = [NSException exceptionWithName:exceptionInfo[@"name"]
                                                          reason:exceptionInfo[@"reason"] 
                                                        userInfo:nil];
