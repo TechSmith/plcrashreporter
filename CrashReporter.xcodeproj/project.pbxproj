@@ -752,6 +752,8 @@
 		05FDFC84168950F600463E43 /* PLCrashMachExceptionServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FDFC83168950F600463E43 /* PLCrashMachExceptionServerTests.m */; };
 		05FDFC85168950F600463E43 /* PLCrashMachExceptionServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FDFC83168950F600463E43 /* PLCrashMachExceptionServerTests.m */; };
 		05FDFC86168950F600463E43 /* PLCrashMachExceptionServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FDFC83168950F600463E43 /* PLCrashMachExceptionServerTests.m */; };
+		1F14AC812BACB4330037FCD3 /* CPPCrashHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F14AC802BACB4330037FCD3 /* CPPCrashHelper.mm */; };
+		1F14AC822BACB4330037FCD3 /* CPPCrashHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F14AC7F2BACB4330037FCD3 /* CPPCrashHelper.h */; };
 		2D0E10461141F7DC00CE1BD6 /* PLCrashReportProcessInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0E10441141F7DC00CE1BD6 /* PLCrashReportProcessInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D0E10471141F7DC00CE1BD6 /* PLCrashReportProcessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0E10451141F7DC00CE1BD6 /* PLCrashReportProcessInfo.m */; };
 		2D0E10481141F7DC00CE1BD6 /* PLCrashReportProcessInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0E10441141F7DC00CE1BD6 /* PLCrashReportProcessInfo.h */; };
@@ -763,6 +765,9 @@
 		2D0E104E1141F7DC00CE1BD6 /* PLCrashReportProcessInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0E10441141F7DC00CE1BD6 /* PLCrashReportProcessInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52F4F023243787F200591ACE /* crash_report.pb-c.h in Headers */ = {isa = PBXBuildFile; fileRef = 52F4F021243787F200591ACE /* crash_report.pb-c.h */; };
 		52F4F024243787F200591ACE /* crash_report.pb-c.c in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F022243787F200591ACE /* crash_report.pb-c.c */; };
+		5A0DBE1125530AE9000B8126 /* crash_report.pb-c.c in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F022243787F200591ACE /* crash_report.pb-c.c */; };
+		5A0DBE1225530AEE000B8126 /* crash_report.pb-c.h in Headers */ = {isa = PBXBuildFile; fileRef = 52F4F021243787F200591ACE /* crash_report.pb-c.h */; };
+		5A0DBE1325530BE7000B8126 /* CrashReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 05CD31890EE93A90000FDE88 /* CrashReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8064D7AF1C4D22D8005A8B4C /* CrashReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 05CD31890EE93A90000FDE88 /* CrashReporter.h */; };
 		8064D7B01C4D22D8005A8B4C /* PLCrashSignalHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 05CD339A0EE948EB000FDE88 /* PLCrashSignalHandler.h */; };
 		8064D7B11C4D22D8005A8B4C /* PLCrashFrameWalker.h in Headers */ = {isa = PBXBuildFile; fileRef = 059666DA0EEDDFB8008A0601 /* PLCrashFrameWalker.h */; };
@@ -1851,6 +1856,8 @@
 		05F76DD9162F238E00A668C7 /* PLCrashAsyncMachOImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCrashAsyncMachOImageTests.m; sourceTree = "<group>"; };
 		05FDFC83168950F600463E43 /* PLCrashMachExceptionServerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCrashMachExceptionServerTests.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		1F14AC7F2BACB4330037FCD3 /* CPPCrashHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPPCrashHelper.h; sourceTree = "<group>"; };
+		1F14AC802BACB4330037FCD3 /* CPPCrashHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CPPCrashHelper.mm; sourceTree = "<group>"; };
 		2D0E10441141F7DC00CE1BD6 /* PLCrashReportProcessInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportProcessInfo.h; sourceTree = "<group>"; };
 		2D0E10451141F7DC00CE1BD6 /* PLCrashReportProcessInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCrashReportProcessInfo.m; sourceTree = "<group>"; };
 		52F4F021243787F200591ACE /* crash_report.pb-c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "crash_report.pb-c.h"; sourceTree = "<group>"; };
@@ -2228,6 +2235,8 @@
 				05A17DDB16D80C7C00888448 /* Test Thread */,
 				0596674D0EEDEBB1008A0601 /* Frame Walking */,
 				05EB2B1F15B6FE400066EB4D /* Error Reporting */,
+				1F14AC7F2BACB4330037FCD3 /* CPPCrashHelper.h */,
+				1F14AC802BACB4330037FCD3 /* CPPCrashHelper.mm */,
 			);
 			name = "Private API";
 			sourceTree = "<group>";
@@ -2799,6 +2808,7 @@
 				05E7485C1760D62A009B8745 /* PLCrashAsyncDwarfFDE.hpp in Headers */,
 				05E7488C176135CF009B8745 /* PLCrashAsyncDwarfExpression.hpp in Headers */,
 				05E748B017616D30009B8745 /* dwarf_stack.hpp in Headers */,
+				1F14AC842BACB4330037FCD3 /* CPPCrashHelper.h in Headers */,
 				05C76DAF176B8C7000E9B10D /* dwarf_opstream.hpp in Headers */,
 				05C76DD1176FBAF300E9B10D /* PLCrashAsyncDwarfCFAState.hpp in Headers */,
 				05920D27177B9257001E8975 /* PLCrashFrameDWARFUnwind.h in Headers */,
@@ -2867,6 +2877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E734380EFAC46D005EDFB7 /* PLCrashAsyncSignalInfo.h in Headers */,
+				5A0DBE1325530BE7000B8126 /* CrashReporter.h in Headers */,
 				05E734FD0EFAE59C005EDFB7 /* PLCrashReportSignalInfo.h in Headers */,
 				2D0E10481141F7DC00CE1BD6 /* PLCrashReportProcessInfo.h in Headers */,
 				054627B111D998BB007891C7 /* PLCrashReportTextFormatter.h in Headers */,
@@ -2885,9 +2896,11 @@
 				05F3CD7416DFC744007911FB /* PLCrashAsyncCompactUnwindEncoding.h in Headers */,
 				05E748AE17616D30009B8745 /* dwarf_stack.hpp in Headers */,
 				05C76DAD176B8C7000E9B10D /* dwarf_opstream.hpp in Headers */,
+				1F14AC822BACB4330037FCD3 /* CPPCrashHelper.h in Headers */,
 				05C76DCF176FBAF300E9B10D /* PLCrashAsyncDwarfCFAState.hpp in Headers */,
 				05102E2417B2B80A00B5D925 /* PLCrashHostInfo.h in Headers */,
 				05BEC41717BAF92A0082CBFB /* PLCrashMachExceptionPortSet.h in Headers */,
+				5A0DBE1225530AEE000B8126 /* crash_report.pb-c.h in Headers */,
 				05BEC43617BF1CB10082CBFB /* PLCrashReporterConfig.h in Headers */,
 				05A5E28F17C04188008A75E5 /* PLCrashAsyncLinkedList.hpp in Headers */,
 				05B929E817C9336600B051E3 /* PLCrashUncaughtExceptionHandler.h in Headers */,
@@ -2930,6 +2943,7 @@
 				8064D7CB1C4D22D8005A8B4C /* PLCrashAsyncDwarfFDE.hpp in Headers */,
 				8064D7CC1C4D22D8005A8B4C /* PLCrashAsyncDwarfExpression.hpp in Headers */,
 				8064D7CD1C4D22D8005A8B4C /* dwarf_stack.hpp in Headers */,
+				1F14AC862BACB4330037FCD3 /* CPPCrashHelper.h in Headers */,
 				8064D7CE1C4D22D8005A8B4C /* dwarf_opstream.hpp in Headers */,
 				8064D7CF1C4D22D8005A8B4C /* PLCrashAsyncDwarfCFAState.hpp in Headers */,
 				8064D7D01C4D22D8005A8B4C /* PLCrashFrameDWARFUnwind.h in Headers */,
@@ -3484,19 +3498,17 @@
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					052A45CE136353FB00987004 = {
-						DevelopmentTeam = 5Z97G9NZQ6;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					05CD33230EE94439000FDE88 = {
-						DevelopmentTeam = K952H3J75D;
+						ProvisioningStyle = Manual;
 						TestTargetID = 052A45CE136353FB00987004;
 					};
 					05F40CE60EF7AB80008050CF = {
-						DevelopmentTeam = 5Z97G9NZQ6;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					8064D9971C4D27E9005A8B4C = {
-						DevelopmentTeam = 5Z97G9NZQ6;
+						ProvisioningStyle = Manual;
 					};
 					C25664D123571D330088513E = {
 						CreatedOnToolsVersion = 11.1;
@@ -3894,6 +3906,7 @@
 				05BEC42817BD4F290082CBFB /* PLCrashAsyncMachExceptionInfo.c in Sources */,
 				05BEC43C17BF1CB10082CBFB /* PLCrashReporterConfig.m in Sources */,
 				05A5E28A17C04188008A75E5 /* PLCrashAsyncLinkedList.cpp in Sources */,
+				1F14AC832BACB4330037FCD3 /* CPPCrashHelper.mm in Sources */,
 				05B929EE17C9336600B051E3 /* PLCrashUncaughtExceptionHandler.m in Sources */,
 				0513E23A17D15ED400727919 /* PLCrashReportMachExceptionInfo.m in Sources */,
 			);
@@ -4327,6 +4340,7 @@
 				057C9BBF17970F6D006B242E /* PLCrashAsyncDwarfEncoding.cpp in Sources */,
 				057C9BC017970F77006B242E /* PLCrashAsyncDwarfExpression.cpp in Sources */,
 				057C9BBE17970F54006B242E /* PLCrashFrameDWARFUnwind.cpp in Sources */,
+				5A0DBE1125530AE9000B8126 /* crash_report.pb-c.c in Sources */,
 				05102E2817B2B80A00B5D925 /* PLCrashHostInfo.m in Sources */,
 				0527062F17CBCCA100E6A5D8 /* PLCrashMachExceptionPort.m in Sources */,
 				05BEC41B17BAF92A0082CBFB /* PLCrashMachExceptionPortSet.m in Sources */,
@@ -4334,6 +4348,7 @@
 				05BEC43A17BF1CB10082CBFB /* PLCrashReporterConfig.m in Sources */,
 				05A5E28817C04188008A75E5 /* PLCrashAsyncLinkedList.cpp in Sources */,
 				05B929EC17C9336600B051E3 /* PLCrashUncaughtExceptionHandler.m in Sources */,
+				1F14AC812BACB4330037FCD3 /* CPPCrashHelper.mm in Sources */,
 				0527063017CBCCC200E6A5D8 /* PLCrashProcessInfo.m in Sources */,
 				0513E23817D15ED400727919 /* PLCrashReportMachExceptionInfo.m in Sources */,
 			);
@@ -4387,6 +4402,7 @@
 				8064D7FD1C4D22D8005A8B4C /* PLCrashMachExceptionServer.m in Sources */,
 				8064D7FE1C4D22D8005A8B4C /* PLCrashFrameStackUnwind.c in Sources */,
 				8064D7FF1C4D22D8005A8B4C /* PLCrashAsyncThread.c in Sources */,
+				1F14AC852BACB4330037FCD3 /* CPPCrashHelper.mm in Sources */,
 				8064D8001C4D22D8005A8B4C /* PLCrashAsyncThread_x86.c in Sources */,
 				C2C80E102350D23B0084D513 /* protobuf-c.c in Sources */,
 				8064D8011C4D22D8005A8B4C /* PLCrashAsyncThread_arm.c in Sources */,
@@ -4998,9 +5014,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(PL_ARM_ARCHS)";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 5Z97G9NZQ6;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILD_ROOT)",
@@ -5031,10 +5047,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(PL_ARM_ARCHS)";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5Z97G9NZQ6;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILD_ROOT)",
@@ -5411,8 +5427,9 @@
 				ARCHS = "$(PL_ARM_ARCHS)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = K952H3J75D;
+				DEVELOPMENT_TEAM = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_THUMB_SUPPORT = NO;
@@ -5427,6 +5444,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "coop.plausible.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Tests-iOS-Device";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoCrash-iOS-Device.app/DemoCrash-iOS-Device";
@@ -5523,8 +5541,10 @@
 				EFFECTIVE_PLATFORM_NAME = "-MacOSX";
 				EXPORTED_SYMBOLS_FILE = Resources/CrashReporter.exp;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../PLCrashReporter/Source/PLCrashNamespace.h";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -5552,7 +5572,9 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EFFECTIVE_PLATFORM_NAME = "-MacOSX";
 				EXPORTED_SYMBOLS_FILE = Resources/CrashReporter.exp;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../PLCrashReporter/Source/PLCrashNamespace.h";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -5575,10 +5597,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 5Z97G9NZQ6;
+				DEVELOPMENT_TEAM = "";
 				EFFECTIVE_PLATFORM_NAME = "-MacOSX";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -5605,11 +5627,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5Z97G9NZQ6;
+				DEVELOPMENT_TEAM = "";
 				EFFECTIVE_PLATFORM_NAME = "-MacOSX";
 				GCC_MODEL_TUNING = G5;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -6093,8 +6115,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 5Z97G9NZQ6;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILD_ROOT)",
@@ -6113,6 +6136,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microsoft.plcrashreporter.DemoCrash-tvOS-Device";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 			};
 			name = Debug;
@@ -6123,9 +6147,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5Z97G9NZQ6;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILD_ROOT)",
@@ -6142,6 +6167,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microsoft.plcrashreporter.DemoCrash-tvOS-Device";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				ZERO_LINK = NO;
 			};
