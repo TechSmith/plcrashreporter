@@ -5556,6 +5556,7 @@
 					"-framework",
 					AppKit,
 					"-lstdc++",
+					"-lc++",
 				);
 				PRODUCT_NAME = "CrashReporter$(EFFECTIVE_PLATFORM_NAME)-Static";
 				SDKROOT = macosx;
@@ -5587,6 +5588,7 @@
 					"-framework",
 					AppKit,
 					"-lstdc++",
+					"-lc++",
 				);
 				PRODUCT_NAME = "CrashReporter$(EFFECTIVE_PLATFORM_NAME)-Static";
 				SDKROOT = macosx;
