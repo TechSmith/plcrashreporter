@@ -7,6 +7,7 @@
 
 #import "CPPCrashHelper.h"
 
+#include <exception.h>
 #include <cxxabi.h>
 #include <dlfcn.h>
 #include <stdio.h>
