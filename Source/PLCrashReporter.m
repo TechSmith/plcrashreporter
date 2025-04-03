@@ -535,7 +535,6 @@ static PLCrashReporter *sharedReporter = nil;
  * not be enabled.
  *
  * @par Registering Multiple Reporters
- *
  * Only one PLCrashReporter instance may be enabled in a process; attempting to enable an additional instance
  * will return NO, and the reporter will not be enabled. This restriction may be removed in a future release.
  */
@@ -561,7 +560,6 @@ static PLCrashReporter *sharedReporter = nil;
  * not be enabled.
  *
  * @par Registering Multiple Reporters
- *
  * Only one PLCrashReporter instance may be enabled in a process; attempting to enable an additional instance
  * will return NO and a PLCrashReporterErrorResourceBusy error, and the reporter will not be enabled.
  * This restriction may be removed in a future release.

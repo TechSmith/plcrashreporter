@@ -520,7 +520,6 @@ static mach_msg_return_t exception_server_reply (PLRequest_exception_raise_t *re
  * if the exception was not handled, or forwarding failed.
  *
  * @par In-Process Operation
- *
  * When operating in-process, handling the exception replies internally breaks external debuggers,
  * as they assume it is safe to leave our thread suspended. This results in the target thread never resuming,
  * as our thread never wakes up to reply to the message, or to handle future messages.

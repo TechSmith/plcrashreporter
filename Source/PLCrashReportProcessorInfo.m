@@ -35,7 +35,6 @@
  * to differentiate between processor variants (eg, ARMv6 vs ARMv7).
  *
  * @par CPU Type Encodings
- *
  * The wire format maintains support for multiple CPU type encodings; it is expected that different operating
  * systems may target different processors, and the reported CPU type and subtype information may not be
  * easily or directly expressed when not using the vendor's own defined types.
