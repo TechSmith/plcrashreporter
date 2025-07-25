@@ -31,6 +31,9 @@
 
 #include <assert.h>
 
+#include <stdlib.h> // pulls in declaration of malloc, free
+#include <string.h>
+
 #if defined(__cplusplus)
 #   define PLCR_EXPORT extern "C"
 #   define PLCR_C_BEGIN_DECLS extern "C" {
