@@ -175,7 +175,7 @@ private:
     
     /** The list reference count. No nodes will be deallocated while the count is greater than 0. If the count
      * reaches 0, all nodes in the free list will be deallocated. */
-    int32_t _refcount;
+    std::atomic<int32_t> _refcount;
     
     /** The node free list. */
     node *_free;
@@ -388,7 +388,7 @@ template <typename V> void async_list<V>::nasync_remove_node (node *deleted_node
         /* If a reader is active, place the node on the free list. The item is unreachable here when readers
          * aren't active, so if we have a 0 refcount, we can safely delete the item, and be sure that no
          * reader holds a reference to it. */
-        if (_refcount > 0) {
+        if (_refcount.load(std::memory_order_seq_cst) > 0) {
             item->_prev = NULL;
             item->_next = _free;
             
@@ -411,10 +411,10 @@ template <typename V> void async_list<V>::nasync_remove_node (node *deleted_node
 template <typename V> void async_list<V>::set_reading (bool enable) {
     if (enable) {
         /* Increment and issue a barrier. Once issued, no items will be deallocated while a reference is held. */
-        OSAtomicIncrement32Barrier(&_refcount);
+        _refcount.fetch_add(1, std::memory_order_seq_cst);
     } else {
         /* Increment and issue a barrier. Once issued, items may again be deallocated. */
-        OSAtomicDecrement32Barrier(&_refcount);
+        _refcount.fetch_sub(1, std::memory_order_seq_cst);
     }
 }
 
@@ -426,7 +426,7 @@ template <typename V> void async_list<V>::set_reading (bool enable) {
  * @param current The current list node, or NULL to start iteration.
  */
 template <typename V> typename async_list<V>::node *async_list<V>::next (node *current) {
-    PLCF_ASSERT(_refcount > 0);
+    PLCF_ASSERT(_refcount.load(std::memory_order_seq_cst) > 0);
     
     if (current != NULL)
         return current->_next;
