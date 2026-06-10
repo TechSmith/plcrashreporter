@@ -151,6 +151,17 @@ public:
     }
 
 private:
+    static inline bool cas_ptr_barrier (node **target, node *expected, node *desired) {
+        node *expected_value = expected;
+        return std::atomic_compare_exchange_strong_explicit(
+            reinterpret_cast<std::atomic<node *> *>(target),
+            &expected_value,
+            desired,
+            std::memory_order_seq_cst,
+            std::memory_order_seq_cst
+        );
+    }
+
     void free_list (node *next);
 
     /** The lock used by writers. No lock is required for readers. */
@@ -221,7 +232,7 @@ template <typename V> void async_list<V>::nasync_prepend (V value) {
             _tail = new_node;
             
             /* Atomically update the list head; this will be iterated upon by lockless readers. */
-            if (!OSAtomicCompareAndSwapPtrBarrier(NULL, new_node, (void **) (&_head))) {
+            if (!cas_ptr_barrier(&_head, NULL, new_node)) {
                 /* Should never occur */
                 PLCF_DEBUG("An async image head was set with tail == NULL despite holding lock.");
             }
@@ -240,7 +251,7 @@ template <typename V> void async_list<V>::nasync_prepend (V value) {
             std::atomic_thread_fence(std::memory_order_seq_cst);
 
             /* Atomically slot the new record into place; this may be iterated on by a lockless reader. */
-            if (!OSAtomicCompareAndSwapPtrBarrier(new_node->_next, new_node, (void **) (&_head))) {
+            if (!cas_ptr_barrier(&_head, new_node->_next, new_node)) {
                 PLCF_DEBUG("Failed to prepend to image list despite holding lock");
             }
         }
@@ -282,7 +293,7 @@ template <typename V> void async_list<V>::nasync_append (V value) {
             _tail = new_node;
             
             /* Atomically update the list head; this will be iterated upon by lockless readers. */
-            if (!OSAtomicCompareAndSwapPtrBarrier(NULL, new_node, (void **) (&_head))) {
+            if (!cas_ptr_barrier(&_head, NULL, new_node)) {
                 /* Should never occur */
                 PLCF_DEBUG("An async image head was set with tail == NULL despite holding lock.");
             }
@@ -291,7 +302,7 @@ template <typename V> void async_list<V>::nasync_append (V value) {
         /* Otherwise, append to the end of the list */
         else {
             /* Atomically slot the new record into place; this may be iterated on by a lockless reader. */
-            if (!OSAtomicCompareAndSwapPtrBarrier(NULL, new_node, (void **) (&_tail->_next))) {
+            if (!cas_ptr_barrier(&_tail->_next, NULL, new_node)) {
                 PLCF_DEBUG("Failed to append to image list despite holding lock");
             }
             
@@ -354,12 +365,12 @@ template <typename V> void async_list<V>::nasync_remove_node (node *deleted_node
          * This serves as a synchronization point -- after the CAS, the item is no longer reachable via the list.
          */
         if (item == _head) {
-            if (!OSAtomicCompareAndSwapPtrBarrier(item, item->_next, (void **) &_head)) {
+            if (!cas_ptr_barrier(&_head, item, item->_next)) {
                 PLCF_DEBUG("Failed to remove image list head despite holding lock");
             }
         } else {
             /* There MUST be a non-NULL prev pointer, as this is not HEAD. */
-            if (!OSAtomicCompareAndSwapPtrBarrier(item, item->_next, (void **) &item->_prev->_next)) {
+            if (!cas_ptr_barrier(&item->_prev->_next, item, item->_next)) {
                 PLCF_DEBUG("Failed to remove image list item despite holding lock");
             }
         }
