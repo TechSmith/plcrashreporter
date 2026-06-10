@@ -31,6 +31,7 @@
 
 #include "PLCrashAsync.h"
 #include "PLCrashMacros.h"
+#include <atomic>
 #include <libkern/OSAtomic.h>
 #include <os/lock.h>
 
@@ -211,7 +212,7 @@ template <typename V> void async_list<V>::nasync_prepend (V value) {
         }
         
         /* Issue a memory barrier to ensure a consistent view of the value. */
-        OSMemoryBarrier();
+        std::atomic_thread_fence(std::memory_order_seq_cst);
         
         /* If this is the first entry, initialize the list. */
         if (_tail == NULL) {
@@ -236,7 +237,7 @@ template <typename V> void async_list<V>::nasync_prepend (V value) {
             _head->_prev = new_node;
 
             /* Issue a memory barrier to ensure a consistent view of the nodes. */
-            OSMemoryBarrier();
+            std::atomic_thread_fence(std::memory_order_seq_cst);
 
             /* Atomically slot the new record into place; this may be iterated on by a lockless reader. */
             if (!OSAtomicCompareAndSwapPtrBarrier(new_node->_next, new_node, (void **) (&_head))) {
@@ -272,7 +273,7 @@ template <typename V> void async_list<V>::nasync_append (V value) {
         }
         
         /* Issue a memory barrier to ensure a consistent view of the value. */
-        OSMemoryBarrier();
+        std::atomic_thread_fence(std::memory_order_seq_cst);
         
         /* If this is the first entry, initialize the list. */
         if (_tail == NULL) {
