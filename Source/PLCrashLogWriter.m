@@ -38,7 +38,7 @@
 
 #import <mach-o/dyld.h>
 
-#import <libkern/OSAtomic.h>
+#import <stdatomic.h>
 
 #import "PLCrashReport.h"
 #import "PLCrashLogWriter.h"
@@ -454,7 +454,7 @@ plcrash_error_t plcrash_log_writer_init (plcrash_log_writer_t *writer,
 #endif
 
     /* Ensure that any signal handler has a consistent view of the above initialization. */
-    OSMemoryBarrier();
+    atomic_thread_fence(memory_order_seq_cst);
 
     return PLCRASH_ESUCCESS;
 }
@@ -489,7 +489,7 @@ void plcrash_log_writer_set_exception (plcrash_log_writer_t *writer, NSException
     }
 
     /* Ensure that any signal handler has a consistent view of the above initialization. */
-    OSMemoryBarrier();
+    atomic_thread_fence(memory_order_seq_cst);
 }
 
 /**
