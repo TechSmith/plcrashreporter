@@ -32,7 +32,6 @@
 #include "PLCrashAsync.h"
 #include "PLCrashMacros.h"
 #include <atomic>
-#include <libkern/OSAtomic.h>
 #include <os/lock.h>
 
 PLCR_CPP_BEGIN_NS
