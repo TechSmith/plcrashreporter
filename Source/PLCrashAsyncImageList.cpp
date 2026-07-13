@@ -208,13 +208,12 @@ plcrash_async_image_t *plcrash_async_image_list_next (plcrash_async_image_list_t
     /* Lazily swap in the cyclic node reference. This is pessimestic, but there's really not a better time to do it. */
     plcrash_async_image_t *image = node->value();
     async_list<plcrash_async_image_t *>::node *expected_node = NULL;
-    std::atomic_compare_exchange_strong_explicit(
-        reinterpret_cast<std::atomic<async_list<plcrash_async_image_t *>::node *> *>(&image->_node),
-        &expected_node,
-        node,
-        std::memory_order_seq_cst,
-        std::memory_order_seq_cst
-    );
+    __atomic_compare_exchange_n(&image->_node,
+                               &expected_node,
+                               node,
+                               false,
+                               __ATOMIC_SEQ_CST,
+                               __ATOMIC_SEQ_CST);
 
     return node->value();
 }
