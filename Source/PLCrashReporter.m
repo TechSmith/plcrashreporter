@@ -441,12 +441,10 @@ static PLCrashReporter *sharedReporter = nil;
  * clients should initialize a crash reporter instance directly.
  */
 + (PLCrashReporter *) sharedReporter {
-    /* Once we drop 10.5 support, this may be converted to dispatch_once() */
-    static OSSpinLock onceLock = OS_SPINLOCK_INIT;
-    OSSpinLockLock(&onceLock); {
-        if (sharedReporter == nil)
-            sharedReporter = [[PLCrashReporter alloc] initWithBundle: [NSBundle mainBundle] configuration: [PLCrashReporterConfig defaultConfiguration]];
-    } OSSpinLockUnlock(&onceLock);
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        sharedReporter = [[PLCrashReporter alloc] initWithBundle: [NSBundle mainBundle] configuration: [PLCrashReporterConfig defaultConfiguration]];
+    });
 
     return sharedReporter;
 }
