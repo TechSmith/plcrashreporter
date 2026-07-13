@@ -50,6 +50,7 @@
 #import <fcntl.h>
 #import <dlfcn.h>
 #import <mach-o/dyld.h>
+#import <stdatomic.h>
 
 #define NSDEBUG(msg, args...) {\
     NSLog(@"[PLCrashReporter] " msg, ## args); \
@@ -372,8 +373,13 @@ static void uncaught_exception_handler (NSException *exception) {
      * It is possible that another crash may occur between setting the uncaught
      * exception field, and triggering the signal handler.
      */
-    static int32_t exception_is_handled = 0;
-    if (!OSAtomicCompareAndSwap32(0, 1, &exception_is_handled)) {
+    static _Atomic int32_t exception_is_handled = 0;
+    int32_t expected = 0;
+    if (!atomic_compare_exchange_strong_explicit(&exception_is_handled,
+                                                 &expected,
+                                                 1,
+                                                 memory_order_relaxed,
+                                                 memory_order_relaxed)) {
         return;
     }
     
@@ -435,12 +441,10 @@ static PLCrashReporter *sharedReporter = nil;
  * clients should initialize a crash reporter instance directly.
  */
 + (PLCrashReporter *) sharedReporter {
-    /* Once we drop 10.5 support, this may be converted to dispatch_once() */
-    static OSSpinLock onceLock = OS_SPINLOCK_INIT;
-    OSSpinLockLock(&onceLock); {
-        if (sharedReporter == nil)
-            sharedReporter = [[PLCrashReporter alloc] initWithBundle: [NSBundle mainBundle] configuration: [PLCrashReporterConfig defaultConfiguration]];
-    } OSSpinLockUnlock(&onceLock);
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        sharedReporter = [[PLCrashReporter alloc] initWithBundle: [NSBundle mainBundle] configuration: [PLCrashReporterConfig defaultConfiguration]];
+    });
 
     return sharedReporter;
 }

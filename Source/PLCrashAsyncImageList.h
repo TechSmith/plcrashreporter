@@ -30,7 +30,6 @@
 #define PLCRASH_ASYNC_IMAGE_LIST_H
 
 #include <stdint.h>
-#include <libkern/OSAtomic.h>
 #include <stdbool.h>
 
 #include "PLCrashAsyncMachOImage.h"

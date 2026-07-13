@@ -38,7 +38,7 @@
 
 #import <mach-o/dyld.h>
 
-#import <libkern/OSAtomic.h>
+#import <stdatomic.h>
 
 #import "PLCrashReport.h"
 #import "PLCrashLogWriter.h"
@@ -439,32 +439,22 @@ plcrash_error_t plcrash_log_writer_init (plcrash_log_writer_t *writer,
 #elif TARGET_OS_MAC
     /* Mac OS X */
     {
-        SInt32 major, minor, bugfix;
-
-        /* Fetch the major, minor, and bugfix versions.
-         * Fetching the OS version should not fail. */
-        if (Gestalt(gestaltSystemVersionMajor, &major) != noErr) {
-            PLCF_DEBUG("Could not retrieve system major version with Gestalt");
-            return PLCRASH_EINTERNAL;
-        }
-        if (Gestalt(gestaltSystemVersionMinor, &minor) != noErr) {
-            PLCF_DEBUG("Could not retrieve system minor version with Gestalt");
-            return PLCRASH_EINTERNAL;
-        }
-        if (Gestalt(gestaltSystemVersionBugFix, &bugfix) != noErr) {
-            PLCF_DEBUG("Could not retrieve system bugfix version with Gestalt");
-            return PLCRASH_EINTERNAL;
-        }
+        NSProcessInfo *processInfo = [NSProcessInfo processInfo];
+        NSOperatingSystemVersion systemVersion = processInfo.operatingSystemVersion;
 
         /* Compose the string */
-        asprintf(&writer->system_info.version, "%" PRId32 ".%" PRId32 ".%" PRId32, (int32_t)major, (int32_t)minor, (int32_t)bugfix);
+        asprintf(&writer->system_info.version,
+                 "%ld.%ld.%ld",
+                 (long) systemVersion.majorVersion,
+                 (long) systemVersion.minorVersion,
+                 (long) systemVersion.patchVersion);
     }
 #else
 #error Unsupported Platform
 #endif
 
     /* Ensure that any signal handler has a consistent view of the above initialization. */
-    OSMemoryBarrier();
+    atomic_thread_fence(memory_order_seq_cst);
 
     return PLCRASH_ESUCCESS;
 }
@@ -499,7 +489,7 @@ void plcrash_log_writer_set_exception (plcrash_log_writer_t *writer, NSException
     }
 
     /* Ensure that any signal handler has a consistent view of the above initialization. */
-    OSMemoryBarrier();
+    atomic_thread_fence(memory_order_seq_cst);
 }
 
 /**
