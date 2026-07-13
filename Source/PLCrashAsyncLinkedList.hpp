@@ -152,13 +152,12 @@ public:
 private:
     static inline bool cas_ptr_barrier (node **target, node *expected, node *desired) {
         node *expected_value = expected;
-        return std::atomic_compare_exchange_strong_explicit(
-            reinterpret_cast<std::atomic<node *> *>(target),
-            &expected_value,
-            desired,
-            std::memory_order_seq_cst,
-            std::memory_order_seq_cst
-        );
+        return __atomic_compare_exchange_n(target,
+                                           &expected_value,
+                                           desired,
+                                           false,
+                                           __ATOMIC_SEQ_CST,
+                                           __ATOMIC_SEQ_CST);
     }
 
     void free_list (node *next);
