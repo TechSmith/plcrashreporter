@@ -2808,7 +2808,6 @@
 				05E7485C1760D62A009B8745 /* PLCrashAsyncDwarfFDE.hpp in Headers */,
 				05E7488C176135CF009B8745 /* PLCrashAsyncDwarfExpression.hpp in Headers */,
 				05E748B017616D30009B8745 /* dwarf_stack.hpp in Headers */,
-				1F14AC842BACB4330037FCD3 /* CPPCrashHelper.h in Headers */,
 				05C76DAF176B8C7000E9B10D /* dwarf_opstream.hpp in Headers */,
 				05C76DD1176FBAF300E9B10D /* PLCrashAsyncDwarfCFAState.hpp in Headers */,
 				05920D27177B9257001E8975 /* PLCrashFrameDWARFUnwind.h in Headers */,
@@ -2943,7 +2942,6 @@
 				8064D7CB1C4D22D8005A8B4C /* PLCrashAsyncDwarfFDE.hpp in Headers */,
 				8064D7CC1C4D22D8005A8B4C /* PLCrashAsyncDwarfExpression.hpp in Headers */,
 				8064D7CD1C4D22D8005A8B4C /* dwarf_stack.hpp in Headers */,
-				1F14AC862BACB4330037FCD3 /* CPPCrashHelper.h in Headers */,
 				8064D7CE1C4D22D8005A8B4C /* dwarf_opstream.hpp in Headers */,
 				8064D7CF1C4D22D8005A8B4C /* PLCrashAsyncDwarfCFAState.hpp in Headers */,
 				8064D7D01C4D22D8005A8B4C /* PLCrashFrameDWARFUnwind.h in Headers */,
@@ -3906,7 +3904,6 @@
 				05BEC42817BD4F290082CBFB /* PLCrashAsyncMachExceptionInfo.c in Sources */,
 				05BEC43C17BF1CB10082CBFB /* PLCrashReporterConfig.m in Sources */,
 				05A5E28A17C04188008A75E5 /* PLCrashAsyncLinkedList.cpp in Sources */,
-				1F14AC832BACB4330037FCD3 /* CPPCrashHelper.mm in Sources */,
 				05B929EE17C9336600B051E3 /* PLCrashUncaughtExceptionHandler.m in Sources */,
 				0513E23A17D15ED400727919 /* PLCrashReportMachExceptionInfo.m in Sources */,
 			);
@@ -4402,7 +4399,6 @@
 				8064D7FD1C4D22D8005A8B4C /* PLCrashMachExceptionServer.m in Sources */,
 				8064D7FE1C4D22D8005A8B4C /* PLCrashFrameStackUnwind.c in Sources */,
 				8064D7FF1C4D22D8005A8B4C /* PLCrashAsyncThread.c in Sources */,
-				1F14AC852BACB4330037FCD3 /* CPPCrashHelper.mm in Sources */,
 				8064D8001C4D22D8005A8B4C /* PLCrashAsyncThread_x86.c in Sources */,
 				C2C80E102350D23B0084D513 /* protobuf-c.c in Sources */,
 				8064D8011C4D22D8005A8B4C /* PLCrashAsyncThread_arm.c in Sources */,
@@ -5717,16 +5713,17 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CURRENT_PROJECT_VERSION = 1.4.0;
-				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Source/PLCrashNamespace.h";
 				GCC_PREPROCESSOR_DEFINITIONS = PLCR_PRIVATE;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_SHADOW = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Dependencies/protobuf-c\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -5769,16 +5766,17 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CURRENT_PROJECT_VERSION = 1.4.0;
-				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Source/PLCrashNamespace.h";
 				GCC_PREPROCESSOR_DEFINITIONS = PLCR_PRIVATE;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_SHADOW = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Dependencies/protobuf-c\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-D$(PL_BUILD_CONFIG_FLAG)=1",
@@ -5882,7 +5880,6 @@
 				GCC_ENABLE_EXCEPTIONS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -5908,7 +5905,6 @@
 				EXPORTED_SYMBOLS_FILE = Resources/CrashReporter.exp;
 				GCC_ENABLE_EXCEPTIONS = NO;
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"$(inherited)",
