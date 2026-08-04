@@ -731,7 +731,7 @@ static plcrash_error_t plcr_live_report_callback (plcrash_async_thread_state_t *
     
     int fd = mkstemp(path);
     if (fd < 0) {
-        plcrash_populate_posix_error(outError, errno, NSLocalizedString(@"Failed to create temporary path", @"Error opening temporary output path"));
+        plcrash_populate_posix_error(outError, errno, NSLocalizedStringFromTable(@"Failed to create temporary path", @"PLCrashReporter", @"Error opening temporary output path"));
         free(path);
 
         return nil;
@@ -783,7 +783,7 @@ static plcrash_error_t plcr_live_report_callback (plcrash_async_thread_state_t *
     data = [NSData dataWithContentsOfFile: [NSString stringWithUTF8String: path]];
     if (data == nil) {
         /* This should only happen if our data is deleted out from under us */
-        plcrash_populate_error(outError, PLCrashReporterErrorUnknown, NSLocalizedString(@"Unable to open live crash report for reading", nil), nil);
+        plcrash_populate_error(outError, PLCrashReporterErrorUnknown, NSLocalizedStringFromTable(@"Unable to open live crash report for reading", @"PLCrashReporter", nil), nil);
         goto cleanup;
     }
 
